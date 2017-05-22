@@ -15,7 +15,7 @@ class SparseBlockGemv(Op):
         for b in range(batch_size):
             for j in range(o.shape[1]):
                 for i in range(h.shape[1]):
-                    o[b, j, :] += numpy.dot(h[b, i], W[iIdx[b, i], oIdx[b, j]])
+                    o[b, j, :] += np.dot(h[b, i], W[iIdx[b, i], oIdx[b, j]])
 
     where b, h, W, o iIdx, oIdx are defined in the docstring of make_node.
 
